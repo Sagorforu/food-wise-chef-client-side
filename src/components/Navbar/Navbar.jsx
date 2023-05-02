@@ -9,14 +9,14 @@ const Navbar = () => {
   return (
     <div className="background-color py-5 lg:flex items-center justify-between lg:px-36 px-2">
       <Link to="/">
-        <h2 className="text-[#383838] font-bold text-4xl">Food Wise</h2>
+        <h2 className="text-[#383838] font-bold text-4xl">Food <span className="text-[#e05f09]">Wise</span></h2>
       </Link>
       <ul className="lg:flex ">
         <li className="p-4 font-semibold text-xl">
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? "text-[#8402a5]" : "text-[#03adad]"
+              isActive ? "text-[#383838]" : "text-[#e05f09]"
             }
           >
             Home
@@ -26,7 +26,7 @@ const Navbar = () => {
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              isActive ? "text-[#8402a5]" : "text-[#03adad]"
+              isActive ? "text-[#383838]" : "text-[#e05f09]"
             }
           >
             About us
@@ -36,7 +36,7 @@ const Navbar = () => {
           <NavLink
             to="/blog"
             className={({ isActive }) =>
-              isActive ? "text-[#8402a5]" : "text-[#03adad]"
+              isActive ? "text-[#383838]" : "text-[#e05f09]"
             }
           >
             Blogs
