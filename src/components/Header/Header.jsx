@@ -1,6 +1,4 @@
 import React from "react";
-import Lottie from "lottie-react";
-import healthyFood from "../../assets/healthyFood.json";
 
 const Header = () => {
   return (
@@ -14,7 +12,7 @@ const Header = () => {
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md">
           <h1 className="mb-5 text-[#eeeeee] text-5xl font-bold">
-            The best place for awesome{" "}
+            The best place for awesome 
             <span className="text-[#ff7213] text-6xl">Recipes</span> and Chef
           </h1>
           <p className="mb-5 text-[#eeeeee]">
@@ -33,7 +31,6 @@ const Header = () => {
             <button className="btn btn-outline btn-accent">Search</button>
           </div>
         </div>
-        {/* <div><Lottie className="w-1/2" animationData={healthyFood} loop={true}></Lottie></div> */}
       </div>
     </div>
   );
