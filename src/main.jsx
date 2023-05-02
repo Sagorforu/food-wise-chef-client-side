@@ -9,6 +9,7 @@ import About from "./components/About/About";
 import Blogs from "./components/Blogs/Blogs";
 import Main from "./components/Main/Main";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
+import ViewDetails from "./components/Home/ViewDetails";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
       {
         path: 'blog',
         element: <Blogs></Blogs>
+      },
+      {
+        path: 'chefdata/:id',
+        element: <ViewDetails></ViewDetails>,
+        loader: ({params}) => fetch(`http://localhost:5000/chefdata/${params.id}`)
       }
     ]
   },
