@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
 
     // const [user, setUser] = useState(null)
-    const user = 'sagor';
+    const user = null;
 
   return (
     <div className="background-color py-5 lg:flex items-center justify-between lg:px-36 px-2">
