@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useRouteError } from "react-router-dom";
 import Lottie from "lottie-react";
-import groovyWalkAnimation from "../../assets/error-404.json";
+import foodError from '../../assets/foodError.json';
 
 const ErrorPage = () => {
   const { error } = useRouteError();
@@ -10,7 +10,7 @@ const ErrorPage = () => {
       <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
         <Lottie
           className="w-1/2"
-          animationData={groovyWalkAnimation}
+          animationData={foodError}
           loop={true}
         />
         <div className="max-w-md text-center mb-8">
@@ -19,7 +19,7 @@ const ErrorPage = () => {
           </p>
           <Link
             to="/"
-            className="btn-color text-center  mt-10 px-5 py-3 rounded-md font-semibold text-base text-white"
+            className="btn btn-outline text-[#383838] text-center  mt-10 px-5 py-3 rounded-md font-semibold text-base"
           >
             Back to homepage
           </Link>
