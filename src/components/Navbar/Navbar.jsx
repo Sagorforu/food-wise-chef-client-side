@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
-
-    // const [user, setUser] = useState(null)
-    const user = null;
+  // const [user, setUser] = useState(null)
+  const user = null;
 
   return (
     <div className="background-color py-5 lg:flex items-center justify-between lg:px-36 px-2">
       <Link to="/">
-        <h2 className="text-[#383838] font-bold text-4xl">Food <span className="text-[#e05f09]">Wise</span></h2>
+        <h2 className="text-[#383838] font-bold text-4xl">
+          Food<span className="text-[#e05f09]">Wise</span>
+        </h2>
       </Link>
       <ul className="lg:flex ">
         <li className="p-4 font-semibold text-xl">
@@ -44,15 +45,26 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="flex gap-4 items-center justify-center">
-        { user? <div>
-          <img
-            className="w-10 mask mask-hexagon"
-            src="https://i.ibb.co/wrkccHX/anahita.jpg"
-          />
-        </div> :
-        <Link to="/login">
-          <button className="btn btn-outline text-[#383838]">Login</button>
-        </Link>}
+        {user ? (
+          <div className="flex gap-4 items-center">
+            <img
+              className="w-10 mask mask-hexagon"
+              src="https://i.ibb.co/wrkccHX/anahita.jpg"
+            />
+            <button className="btn btn-outline text-[#383838]">LogOut</button>
+          </div>
+        ) : (
+          <div>
+            <Link to="/login">
+              <button className="btn btn-outline me-4 text-[#383838]">Login</button>
+            </Link>
+            <Link to="/register">
+              <button className="btn btn-outline text-[#383838]">
+                Register
+              </button>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
