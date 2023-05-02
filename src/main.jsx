@@ -38,9 +38,9 @@ const router = createBrowserRouter([
         element: <Blogs></Blogs>
       },
       {
-        path: 'chefdata/:id',
+        path: '/chefdata/:id',
         element: <ViewDetails></ViewDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/chefdata/${params.id}`)
+        loader: ({params}) => fetch(`https://food-wise-server-sagorislam1318-gmailcom.vercel.app/chefdata/${params.id}`)
       }
     ]
   },

@@ -17,7 +17,7 @@ const Navbar = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? "text-[#383838]" : "text-[#e05f09]"
+              isActive ? "text-[#e05f09]" : "text-[#383838]"
             }
           >
             Home
@@ -27,7 +27,7 @@ const Navbar = () => {
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              isActive ? "text-[#383838]" : "text-[#e05f09]"
+              isActive ? "text-[#e05f09]" : "text-[#383838]"
             }
           >
             About us
@@ -37,7 +37,7 @@ const Navbar = () => {
           <NavLink
             to="/blog"
             className={({ isActive }) =>
-              isActive ? "text-[#383838]" : "text-[#e05f09]"
+              isActive ? "text-[#e05f09]" : "text-[#383838]"
             }
           >
             Blogs

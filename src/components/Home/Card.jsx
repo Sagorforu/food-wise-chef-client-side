@@ -3,7 +3,7 @@ import { FaCalendarPlus, FaHeart, FaListOl } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Card = ({ chef }) => {
-  const { id, chefName, experience, recipes, likes, chefPicture } = chef;
+  const { id, numberOfRecipes, chefName, experience, recipes, likes, chefPicture } = chef;
 
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
@@ -24,9 +24,9 @@ const Card = ({ chef }) => {
         <p className="flex items-center gap-2">
           <FaListOl />{" "}
           <span className="text-[#383838]">
-            Numbers of recipes:{" "}
-            <span className="font-semibold text-[#e05f09]">
-              {recipes.length}
+            Numbers of recipes:
+            <span className="font-semibold ms-2 text-[#e05f09]">
+              {numberOfRecipes}
             </span>
           </span>
         </p>
@@ -36,7 +36,7 @@ const Card = ({ chef }) => {
             <FaHeart /> <span className="text-[#383838]">Likes: </span>{" "}
             <span className="font-semibold text-[#e05f09]">{likes}</span>
           </p>
-          <Link to={`chefdata/${id}`}>
+          <Link to={`/chefdata/${id}`}>
             <button className="btn btn-outline text-[#383838]">
               View Recipes
             </button>

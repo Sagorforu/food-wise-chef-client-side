@@ -13,7 +13,7 @@ const Header = () => {
         <div className="max-w-md">
           <h1 className="mb-5 text-[#eeeeee] text-3xl lg:text-5xl font-bold">
             The best place for awesome 
-            <span className="text-[#ff7213] text-4xl lg:text-6xl">Recipes</span> and Chef
+            <span className="text-[#ff7213] text-4xl lg:text-6xl ms-2">Recipes</span> and Chef
           </h1>
           <p className="mb-5 text-[#eeeeee]">
             Custom meal plans and nutrition coaching for your health goals. Your
