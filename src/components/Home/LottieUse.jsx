@@ -8,9 +8,9 @@ const LottieUse = () => {
     <div className="my-20 grid lg:grid-cols-2 gap-4 items-center justify-between lg:px-36 px-2">
       <div>
         <p className="text-xl font-semibold mb-6 text-[#e05f09]">
-          MANAGE FROM FOUNDER
+          MASSAGE FROM FOUNDER
         </p>
-        <h3 className="text-[#383838] text-4xl font-bold">
+        <h3 className="text-[#383838] text-3xl lg:text-4xl font-bold">
           First, we eat. Then, we do everything else.
         </h3>
         <p className="text-[#383838] text-base font-medium mt-6">
