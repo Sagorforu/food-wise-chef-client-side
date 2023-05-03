@@ -1,14 +1,18 @@
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import login3 from "../../assets/login3.json";
 import { AuthContext } from "../Providers/AuthProvider";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+
 
 const Login = () => {
   const { logInUser } = useContext(AuthContext);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  console.log("login page location", location);
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -30,12 +34,12 @@ const Login = () => {
       .then((result) => {
         const signedUser = result.user;
         console.log(signedUser);
-        navigate('/');
+        navigate(from, { replace: true });
         event.target.reset();
       })
       .catch((error) => {
         console.log(error);
-        setError("wrong email or password")
+        setError("wrong email or password");
       });
   };
 

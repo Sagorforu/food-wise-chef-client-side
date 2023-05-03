@@ -66,7 +66,7 @@ const ViewDetails = () => {
         <div className="">
             {
                 recipes.map(recipe => <Recipes
-                key={recipe.image}
+                key={recipe.recipeName}
                 recipe={recipe}
                 ></Recipes>)
             }
