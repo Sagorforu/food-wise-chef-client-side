@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Register.css";
 import { FaGithub, FaGoogle } from "react-icons/fa";
@@ -6,11 +6,18 @@ import Lottie from "lottie-react";
 import login5 from "../../assets/login5.json";
 
 const Register = () => {
+  const [accepted, setAccepted] = useState(false);
+
+
+  const handleCheckbox = event => {
+    setAccepted(event.target.checked)
+  }
+
   return (
     <div className="hero py-10 bg-base-200">
       <div className="hero-content flex-col">
         <div className="text-center">
-          <h1 className="text-3xl lg:text-5xl font-bold mb-10">
+          <h1 className="text-3xl lg:text-5xl text-[#383838] font-bold mb-10">
             Register Here
           </h1>
         </div>
@@ -19,7 +26,7 @@ const Register = () => {
             <div className="card-body">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-lg font-semibold">Name</span>
+                  <span className="label-text text-lg text-[#383838] font-semibold">Name</span>
                 </label>
                 <input
                   name="name"
@@ -30,7 +37,7 @@ const Register = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-lg font-semibold">
+                  <span className="label-text text-lg text-[#383838] font-semibold">
                     Photo URL
                   </span>
                 </label>
@@ -43,7 +50,7 @@ const Register = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-lg font-semibold">
+                  <span className="label-text text-lg text-[#383838] font-semibold">
                     Email
                   </span>
                 </label>
@@ -56,7 +63,7 @@ const Register = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-lg font-semibold">
+                  <span className="label-text text-lg text-[#383838] font-semibold">
                     Password
                   </span>
                 </label>
@@ -67,8 +74,16 @@ const Register = () => {
                   className="input input-bordered"
                 />
               </div>
+              <div className="flex gap-4 mt-2 font-semibold text-[#383838]">
+                <input onClick={handleCheckbox} className="w-4" type="checkbox" name="accept" id="" />
+                {
+                  <p>
+                    Accept <Link className="underline" to="/terms">Terms and Conditions</Link>
+                  </p>
+                }
+              </div>
               <div className="form-control mt-6">
-                <button className="btn btn-outline text-[#383838]">
+                <button disabled={!accepted} className="btn btn-outline text-[#383838]">
                   Register Now
                 </button>
                 <p className="text-lg font-semibold mt-4 text-[#383838]">
@@ -96,7 +111,11 @@ const Register = () => {
             </div>
           </div>
           <div>
-            <Lottie className="object-cover" animationData={login5} loop={true} />
+            <Lottie
+              className="object-cover"
+              animationData={login5}
+              loop={true}
+            />
           </div>
         </div>
       </div>
