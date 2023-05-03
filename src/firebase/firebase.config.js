@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBRDtumrf-lXhRlEXRzHme_Hk6Nrbds8PU",
-  authDomain: "twitter-practice-firebase.firebaseapp.com",
-  projectId: "twitter-practice-firebase",
-  storageBucket: "twitter-practice-firebase.appspot.com",
-  messagingSenderId: "636767321972",
-  appId: "1:636767321972:web:0927ee422ec611938cb621"
+  apiKey: "AIzaSyAAFT2tKsFJOd1wnQsjljbomcKYkksyeoI",
+  authDomain: "food-wise-assignment.firebaseapp.com",
+  projectId: "food-wise-assignment",
+  storageBucket: "food-wise-assignment.appspot.com",
+  messagingSenderId: "857729288804",
+  appId: "1:857729288804:web:88e3a4af047d16ce246d71"
 };
 
 // Initialize Firebase

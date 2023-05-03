@@ -10,7 +10,7 @@ const ChefCard = () => {
     },[])
 
     return (
-        <div className="py-5 lg:px-36 px-2">
+        <div className="lg:py-5 lg:px-36 mx-6">
             <h2 className='text-3xl mb-16 lg:text-5xl text-center font-bold text-[#383838]'>Indian best chef here</h2>
             <div className='grid lg:grid-cols-3 gap-6 my-10'>
                 {
