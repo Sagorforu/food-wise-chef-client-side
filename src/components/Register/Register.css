@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #383838;
+}
+
+.line {
+  position: relative;
+  width: 100px;
+  height: 2px;
+  background-color: #383838;
+}
+
+.line:first-child {
+  margin-right: 20px;
+}
+
+.line:last-child {
+  margin-left: 20px;
+}
