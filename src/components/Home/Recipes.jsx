@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { FaUtensils } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
 
 const Recipes = ({ recipe }) => {
-  console.log(recipe);
+  const [favorite, setFavorite] = useState(false);
   const { recipeName, ingredients, cookingMethod, rating, image } = recipe;
+
+  const handleFavorite = () => {
+    setFavorite(true);
+    toast('Added to favorite')
+  }
 
   return (
     <div className="mb-20">
@@ -33,9 +39,10 @@ const Recipes = ({ recipe }) => {
             <span className="font-normal text-base lg:text-xl">{cookingMethod}</span>
           </h2>
           <div className="text-center mt-8">
-          <button  className="btn btn-outline text-[#383838]">Add to Favorite</button>
+          <button onClick={handleFavorite} disabled={favorite} className="btn btn-outline text-[#383838]">Add to Favorite</button>
           </div>
         </div>
+        <ToastContainer />
       </div>
     </div>
   );

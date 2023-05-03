@@ -11,6 +11,7 @@ import Main from "./components/Main/Main";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import ViewDetails from "./components/Home/ViewDetails";
 import Terms from "./components/Register/Terms";
+import AuthProvider from "./components/Providers/AuthProvider";
 
 const router = createBrowserRouter([
   {
@@ -39,8 +40,8 @@ const router = createBrowserRouter([
         element: <Blogs></Blogs>,
       },
       {
-        path: '/terms',
-        element: <Terms></Terms>
+        path: "/terms",
+        element: <Terms></Terms>,
       },
       {
         path: "/chefdata/:id",
@@ -56,6 +57,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
   </React.StrictMode>
 );
