@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../Providers/AuthProvider";
 
 const Register = () => {
-  const { createUser,GoogleUser, GithubUser } = useContext(AuthContext);
+  const { createUser,GoogleUser, GithubUser,updateUserProfile } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [accepted, setAccepted] = useState(false);
@@ -38,6 +38,10 @@ const Register = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        updateUserProfile(name,photo)
+        .then(() => {
+          console.log('Profile updated')
+        })
         toast('Registration successful')
         event.target.reset();
       })

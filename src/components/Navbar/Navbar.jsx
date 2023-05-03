@@ -3,7 +3,15 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div className="background-color py-5 lg:flex items-center justify-between lg:px-36 px-2">
@@ -47,17 +55,31 @@ const Navbar = () => {
       <div className="flex gap-4 items-center justify-center">
         {user ? (
           <div className="flex gap-4 items-center">
-            <img
-              className="w-10 mask mask-hexagon"
-              src={user.photoURL}
-            />
-            <p>{user.email}</p>
-            <button className="btn btn-outline text-[#383838]">LogOut</button>
+            {user.photoURL ? (
+              <img
+                className="w-10 mask mask-circle"
+                src={user.photoURL}
+                alt=""
+              />
+            ) : (
+              <img
+                className="w-10 mask mask-circle"
+                src="https://i.ibb.co/9HpR0yB/Nice-Png-user-icon-png-1280406.png"
+              />
+            )}
+            <button
+              onClick={handleLogOut}
+              className="btn btn-outline text-[#383838]"
+            >
+              LogOut
+            </button>
           </div>
         ) : (
           <div>
             <Link to="/login">
-              <button className="btn btn-outline me-4 text-[#383838]">Login</button>
+              <button className="btn btn-outline me-4 text-[#383838]">
+                Login
+              </button>
             </Link>
             <Link to="/register">
               <button className="btn btn-outline text-[#383838]">

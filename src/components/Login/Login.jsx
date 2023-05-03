@@ -6,9 +6,8 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
-  const { logInUser,user } = useContext(AuthContext);
+  const { logInUser } = useContext(AuthContext);
   const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(null);
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -78,7 +77,6 @@ const Login = () => {
                 />
               </div>
               <p className="text-red-600 mt-2">{error}</p>
-              <p className="text-green-600 mt-2">{success}</p>
               <div className="form-control mt-6">
                 <button className="btn btn-outline text-[#383838]">
                   Login
