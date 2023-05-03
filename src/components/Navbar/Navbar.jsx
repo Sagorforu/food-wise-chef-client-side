@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
 
 const Navbar = () => {
-  // const [user, setUser] = useState(null)
-  const user = null;
+  const { user } = useContext(AuthContext);
 
   return (
     <div className="background-color py-5 lg:flex items-center justify-between lg:px-36 px-2">
@@ -49,8 +49,9 @@ const Navbar = () => {
           <div className="flex gap-4 items-center">
             <img
               className="w-10 mask mask-hexagon"
-              src="https://i.ibb.co/wrkccHX/anahita.jpg"
+              src={user.photoURL}
             />
+            <p>{user.email}</p>
             <button className="btn btn-outline text-[#383838]">LogOut</button>
           </div>
         ) : (

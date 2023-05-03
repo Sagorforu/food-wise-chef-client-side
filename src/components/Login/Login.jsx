@@ -6,7 +6,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
-  const { logInUser } = useContext(AuthContext);
+  const { logInUser,user } = useContext(AuthContext);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
 
