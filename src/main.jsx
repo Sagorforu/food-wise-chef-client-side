@@ -12,6 +12,8 @@ import ErrorPage from "./components/ErrorPage/ErrorPage";
 import ViewDetails from "./components/Home/ViewDetails";
 import Terms from "./components/Register/Terms";
 import AuthProvider from "./components/Providers/AuthProvider";
+import PrivateRoute from "./Routes/PrivateRoute";
+import UserDetails from "./components/Register/UserDetails";
 
 const router = createBrowserRouter([
   {
@@ -44,8 +46,16 @@ const router = createBrowserRouter([
         element: <Terms></Terms>,
       },
       {
+        path: '/userdetails',
+        element: <UserDetails></UserDetails>
+      },
+      {
         path: "/chefdata/:id",
-        element: <ViewDetails></ViewDetails>,
+        element: (
+          <PrivateRoute>
+            <ViewDetails></ViewDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://food-wise-server-sagorislam1318-gmailcom.vercel.app/chefdata/${params.id}`

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import Lottie from "lottie-react";
@@ -15,6 +15,7 @@ const Register = () => {
   const [accepted, setAccepted] = useState(false);
   const [error, setError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -38,6 +39,7 @@ const Register = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        navigate('/userdetails')
         updateUserProfile(name,photo)
         .then(() => {
           console.log('Profile updated')

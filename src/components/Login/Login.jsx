@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import login3 from "../../assets/login3.json";
 import { AuthContext } from "../Providers/AuthProvider";
@@ -8,6 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 const Login = () => {
   const { logInUser } = useContext(AuthContext);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -29,7 +30,7 @@ const Login = () => {
       .then((result) => {
         const signedUser = result.user;
         console.log(signedUser);
-        toast("User logged in successfully");
+        navigate('/');
         event.target.reset();
       })
       .catch((error) => {
