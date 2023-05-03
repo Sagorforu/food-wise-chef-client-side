@@ -1,16 +1,54 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import login3 from "../../assets/login3.json";
+import { AuthContext } from "../Providers/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
+  const { logInUser } = useContext(AuthContext);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const password = form.password.value;
+    const email = form.email.value;
+    console.log(password, email);
+    if (!email) {
+      setError("Email is required");
+      return;
+    } else if (!password) {
+      setError("Password is required");
+      return;
+    } else {
+      setError("");
+    }
+
+    logInUser(email, password)
+      .then((result) => {
+        const signedUser = result.user;
+        console.log(signedUser);
+        toast("User logged in successfully");
+        event.target.reset();
+      })
+      .catch((error) => {
+        console.log(error);
+        setError("wrong email or password")
+      });
+  };
+
   return (
     <div className="hero py-10 bg-base-200">
       <div className="hero-content flex-col">
         <div className="text-center">
           <h1 className="text-3xl lg:text-5xl font-bold mb-10">Please Login</h1>
         </div>
-        <div className="grid lg:grid-cols-2 items-center gap-32">
+        <form
+          onSubmit={handleLogin}
+          className="grid lg:grid-cols-2 items-center gap-32"
+        >
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
               <div className="form-control">
@@ -39,6 +77,8 @@ const Login = () => {
                   className="input input-bordered"
                 />
               </div>
+              <p className="text-red-600 mt-2">{error}</p>
+              <p className="text-green-600 mt-2">{success}</p>
               <div className="form-control mt-6">
                 <button className="btn btn-outline text-[#383838]">
                   Login
@@ -59,7 +99,8 @@ const Login = () => {
               loop={true}
             />
           </div>
-        </div>
+        </form>
+        <ToastContainer />
       </div>
     </div>
   );

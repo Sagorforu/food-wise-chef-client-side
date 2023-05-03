@@ -23,7 +23,7 @@ const Register = () => {
     const photo = form.photo.value;
     const email = form.email.value;
     if (passwordError) {
-      toast("Fix password error");
+      setPasswordError("Please password error");
       return;
     } else if (!email) {
       setError("Email is required");
@@ -38,11 +38,11 @@ const Register = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        toast('Registration successful')
         event.target.reset();
       })
-      .then((error) => {
+      .catch((error) => {
         console.log(error.message)
-        setError(error);
       });
   };
   const handleGoogleUser = () => {
@@ -51,7 +51,7 @@ const Register = () => {
       const googleLoggedUser = result.user;
       console.log(googleLoggedUser)
     })
-    .then(error => {
+    .catch(error => {
       console.log(error.message)
       setError(error)
     })
@@ -62,7 +62,7 @@ const Register = () => {
       const githubLoggedUser = result.user;
       console.log(githubLoggedUser)
     })
-    .then(error => {
+    .catch(error => {
       console.log(error.message)
       setError(error)
     })
@@ -70,7 +70,6 @@ const Register = () => {
 
   const handleEmail = (event) => {
     setEmail(event.target.value);
-    event.target.reset();
   };
   const handlePassword = (event) => {
     const passwordInput = event.target.value;
@@ -81,12 +80,10 @@ const Register = () => {
     } else {
       setPasswordError("");
     }
-    event.target.reset();
   };
 
   const handleCheckbox = (event) => {
     setAccepted(event.target.checked);
-    event.target.reset();
   };
 
   return (
