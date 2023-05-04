@@ -32,8 +32,8 @@ const Recipes = ({ recipe }) => {
           </div>
           <p className="mt-4 text-[#383838]">
             <span className="font-bold text-lg lg:text-2xl">Ingredients</span>
-            {ingredients.map((list) => (
-              <li>{list}</li>
+            {ingredients.map((list, index) => (
+              <li key={index}>{list}</li>
             ))}
           </p>
           <h2 className="font-bold mt-4 text-[#383838] text-xl lg:text-4xl">

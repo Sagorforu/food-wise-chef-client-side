@@ -1,15 +1,28 @@
 import React from "react";
+import { FaDownload } from "react-icons/fa";
+import Pdf from "react-to-pdf";
+
+const ref = React.createRef();
 
 const Blogs = () => {
   return (
     <div className="lg:px-36 px-2 py-5">
-      <div className="background-color text-center pb-8 lg:pt-12 pt-4">
+      <div className="background-color text-center pb-16 lg:pt-12 pt-4">
         <h2 className="text-[#1A1919] font-bold text-3xl lg:text-5xl">
           Here is some questions and answers
         </h2>
       </div>
       <div className="">
-        <h2 className="text-color mt-10 text-2xl lg:text-4xl font-bold">
+        <Pdf targetRef={ref} filename="blog.pdf">
+          {({ toPdf }) => (
+            <p className=" flex items-center justify-center font-bold text-3xl text-[#e05f09]">
+              <span>Generate Pdf</span> <button><FaDownload className="ms-7" onClick={toPdf} /></button>
+            </p>
+          )}
+        </Pdf>
+      </div>
+      <div ref={ref} className="">
+        <h2 className="text-color mt-6 text-2xl lg:text-4xl font-bold">
           Q1: What is the differences between uncontrolled and controlled
           components.?
         </h2>
@@ -132,13 +145,33 @@ const Blogs = () => {
             across multiple components or when you want to abstract away some of
             the complexity of managing state in a component.
             <p className="font-bold text-[#383838] mt-3">
-            Here are some common reasons why you might want to create a custom hook:
+              Here are some common reasons why you might want to create a custom
+              hook:
             </p>
             <ol>
-              <li>1. Reuse logic: If you find yourself writing the same logic in multiple components, you can extract that logic into a custom hook and reuse it across all of those components.</li>
-              <li>2. Share state: If you have complex state management logic that you want to share between multiple components, you can create a custom hook to manage that state and then use it in each of the components.</li>
-              <li>3. Simplify component logic: If you have a component with complex logic that's hard to read or maintain, you can extract some of that logic into a custom hook to make the component code simpler and easier to understand.</li>
-              <li>4. Improve code organization: If you have a large component with a lot of state and logic, you can use custom hooks to break up that logic into smaller, more manageable pieces, improving the overall organization and readability of your code.</li>
+              <li>
+                1. Reuse logic: If you find yourself writing the same logic in
+                multiple components, you can extract that logic into a custom
+                hook and reuse it across all of those components.
+              </li>
+              <li>
+                2. Share state: If you have complex state management logic that
+                you want to share between multiple components, you can create a
+                custom hook to manage that state and then use it in each of the
+                components.
+              </li>
+              <li>
+                3. Simplify component logic: If you have a component with
+                complex logic that's hard to read or maintain, you can extract
+                some of that logic into a custom hook to make the component code
+                simpler and easier to understand.
+              </li>
+              <li>
+                4. Improve code organization: If you have a large component with
+                a lot of state and logic, you can use custom hooks to break up
+                that logic into smaller, more manageable pieces, improving the
+                overall organization and readability of your code.
+              </li>
             </ol>
           </span>
         </p>
