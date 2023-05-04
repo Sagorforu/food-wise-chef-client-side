@@ -20,7 +20,7 @@ const Support = () => {
           troubleshooting guides, and contact information for customer support.
         </p>
       </div>
-      <div className="grid lg:grid-cols-2 gap-8">
+      <div className="grid lg:grid-cols-2 lg:gap-8 gap-4">
         <div className="mx-auto bg-orange-100 rounded-2xl bg-opacity-30 w-full text-[#e05f09] p-4 lg:p-10">
           <p>
             <FaEnvelopeOpenText className="lg:font-bold font-semibold text-lg lg:text-2xl" />

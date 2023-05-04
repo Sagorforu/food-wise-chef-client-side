@@ -3,6 +3,8 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { FaUtensils } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Recipes = ({ recipe }) => {
   const [favorite, setFavorite] = useState(false);
@@ -15,8 +17,8 @@ const Recipes = ({ recipe }) => {
 
   return (
     <div className="mb-20">
-      <div className="p-4">
-      <img className="mx-auto rounded-lg" src={image} alt="" />
+      <div className="p-4 flex justify-center">
+      <LazyLoadImage className="mx-auto rounded-lg" effect="blur" src={image} alt="" />
       </div>
       <div className="bg-orange-100 bg-opacity-30 rounded-2xl shadow-xl lg:py-16 py-8 p-4 my-6">
         <div className="lg:px-36 px-2">

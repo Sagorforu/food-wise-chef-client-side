@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 
 const LottieUse = () => {
   return (
-    <div className="my-20 grid lg:grid-cols-2 gap-4 items-center justify-between lg:px-36 px-2">
+    <div className="my-6 grid lg:grid-cols-2 gap-4 items-center justify-between lg:px-36 px-2">
       <div>
-        <p className="text-xl font-semibold mb-6 text-[#e05f09]">
+        <p className="text-xl font-semibold mt-6 mb-2 text-[#e05f09]">
           MASSAGE FROM FOUNDER
         </p>
         <h3 className="text-[#383838] text-3xl lg:text-4xl font-bold">
@@ -30,7 +30,7 @@ const LottieUse = () => {
         </Link>
       </div>
       <div>
-        <div className="ms-32">
+        <div className="flex justify-center">
           <Lottie
             className="w-3/4"
             animationData={healthyFood}

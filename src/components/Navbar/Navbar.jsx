@@ -20,8 +20,8 @@ const Navbar = () => {
           Food<span className="text-[#e05f09]">Wise</span>
         </h2>
       </Link>
-      <ul className="lg:flex ">
-        <li className="p-4 font-semibold text-xl">
+      <ul className="lg:flex py-3">
+        <li className="lg:p-4 py-1 ps-3 font-semibold text-xl">
           <NavLink
             to="/"
             className={({ isActive }) =>
@@ -31,7 +31,7 @@ const Navbar = () => {
             Home
           </NavLink>
         </li>
-        <li className="p-4 font-semibold text-xl">
+        <li className="lg:p-4 py-1 ps-3 font-semibold text-xl">
           <NavLink
             to="/about"
             className={({ isActive }) =>
@@ -41,7 +41,7 @@ const Navbar = () => {
             About us
           </NavLink>
         </li>
-        <li className="p-4 font-semibold text-xl">
+        <li className="lg:p-4 py-1 ps-3 font-semibold text-xl">
           <NavLink
             to="/blog"
             className={({ isActive }) =>
