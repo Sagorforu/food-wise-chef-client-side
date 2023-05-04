@@ -62,14 +62,13 @@ const ViewDetails = () => {
       </div>
       {/* Recipes details here */}
       <div className="">
-        <h2 className="text-center lg:px-36 px-2 my-12 font-bold text-[#383838] text-3xl">{chefName}'s Recipes</h2>
+        <h2 className="text-center lg:px-36 px-2 my-12 font-bold text-[#383838] text-3xl">
+          {chefName}'s Recipes
+        </h2>
         <div className="">
-            {
-                recipes.map(recipe => <Recipes
-                key={recipe.recipeName}
-                recipe={recipe}
-                ></Recipes>)
-            }
+          {recipes.map((recipe) => (
+            <Recipes key={recipe.id} recipe={recipe}></Recipes>
+          ))}
         </div>
       </div>
     </div>

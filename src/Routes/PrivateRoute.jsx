@@ -13,8 +13,8 @@ const PrivateRoute = ({ children }) => {
       <div className="flex items-center justify-center">
         <ColorRing
           visible={true}
-          height="80"
-          width="80"
+          height="120"
+          width="120"
           ariaLabel="blocks-loading"
           wrapperStyle={{}}
           wrapperClass="blocks-wrapper"
