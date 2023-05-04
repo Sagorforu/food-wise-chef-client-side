@@ -55,7 +55,8 @@ const Navbar = () => {
       <div className="flex gap-4 items-center justify-center">
         {user ? (
           <div className="flex gap-4 items-center">
-            {user.photoURL ? (
+            <Link className="text-4xl" title={user.displayName} to="userdetails">
+            {user.photoURL  ? (
               <img
                 className="w-10 mask mask-circle"
                 src={user.photoURL}
@@ -67,6 +68,7 @@ const Navbar = () => {
                 src="https://i.ibb.co/9HpR0yB/Nice-Png-user-icon-png-1280406.png"
               />
             )}
+            </Link>
             <button
               onClick={handleLogOut}
               className="btn btn-outline text-[#383838]"

@@ -56,6 +56,7 @@ const Register = () => {
     .then(result => {
       const googleLoggedUser = result.user;
       console.log(googleLoggedUser)
+      navigate('/userdetails')
     })
     .catch(error => {
       console.log(error.message)
@@ -67,6 +68,7 @@ const Register = () => {
     .then(result => {
       const githubLoggedUser = result.user;
       console.log(githubLoggedUser)
+      navigate('/userdetails')
     })
     .catch(error => {
       console.log(error.message)
