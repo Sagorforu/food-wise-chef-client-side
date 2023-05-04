@@ -14,6 +14,7 @@ import Terms from "./components/Register/Terms";
 import AuthProvider from "./components/Providers/AuthProvider";
 import PrivateRoute from "./Routes/PrivateRoute";
 import UserDetails from "./components/Register/UserDetails";
+import BookNow from "./components/Home/BookNow";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About></About>,
+      },
+      {
+        path: "booknow",
+        element: <BookNow></BookNow>
       },
       {
         path: "blog",

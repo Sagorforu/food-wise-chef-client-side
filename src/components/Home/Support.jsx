@@ -11,7 +11,7 @@ const Support = () => {
     <div className="lg:pt-5 lg:px-36 px-2">
       <div>
         <h2 className=" mb-4 text-3xl lg:text-5xl text-center font-bold text-[#383838]">
-          Get is touch
+          Get in touch
         </h2>
         <p className="mb-2 lg:mb-16 text-center px-2 lg:px-40">
           The support section on a company's website offers assistance and

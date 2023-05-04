@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import LottieUse from "./LottieUse";
 import ChefCard from "./ChefCard";
 import Support from "./Support";
+import BookNow from "./BookNow";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Header></Header>
       <LottieUse></LottieUse>
       <ChefCard></ChefCard>
+      <BookNow></BookNow>
       <Support></Support>
     </div>
   );
